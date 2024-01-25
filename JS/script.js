@@ -39,6 +39,11 @@ function direction() {
 	if(event.keyCode == 40 && dir != "up"){
 		dir = "down"
 	}
+
+	//restartēšanas poga
+	if (event.keyCode == 82) {
+		location.reload()
+	}
 }
 
 function isColliding(jaunaGalva, cuska){
@@ -56,15 +61,15 @@ function isColliding(jaunaGalva, cuska){
 function drawGame() {
 	ctx.drawImage(ground, 0, 0);
 	ctx.drawImage(foodImg, food.x, food.y);
-	ctx.fillStyle = "white";
+	ctx.fillStyle = "yellow";
 	ctx.font = "40px Arial";
-	ctx.fillText("Score: " + score , 2*box, 2*box);
+	ctx.fillText("Score: " + score , 2.5*box, 1.65*box);
 	
 	let snakeX = snake[0].x;
 	let snakeY = snake[0].y;
 	
 	for(let i = 0; i < snake.length; i++){
-		ctx.fillStyle = (i == 0) ? "yellow" : "green"; 
+		ctx.fillStyle = (i == 0) ? "red" : "blue"; 
 		ctx.fillRect(snake[i].x, snake[i].y, box, box); 
 		// if(i == 0){
 		// 	ctx.drawImage(foodImg, snake[i].x, snake[i].y);

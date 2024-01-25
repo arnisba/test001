@@ -64,7 +64,7 @@ function drawGame() {
 	let snakeY = snake[0].y;
 	
 	for(let i = 0; i < snake.length; i++){
-		ctx.fillStyle = (i == 0) ? "red" : "blue"; 
+		ctx.fillStyle = (i == 0) ? "yellow" : "green"; 
 		ctx.fillRect(snake[i].x, snake[i].y, box, box); 
 		// if(i == 0){
 		// 	ctx.drawImage(foodImg, snake[i].x, snake[i].y);
